@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3d80de" />
+    <title>Amira — Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="hero" aria-label="Amira portfolio">
+      <nav class="folders" aria-label="Portfolio sections">
+        <button class="folder" type="button" data-window-title="what I studied">
+          <img src="assets/xp-folder.png" alt="" />
+          <span>what I studied</span>
+        </button>
+        <button class="folder" type="button" data-window-title="what I worked in">
+          <img src="assets/xp-folder.png" alt="" />
+          <span>what I worked in</span>
+        </button>
+        <button class="folder" type="button" data-window-title="what I made">
+          <img src="assets/xp-folder.png" alt="" />
+          <span>what I made</span>
+        </button>
+        <button class="folder" type="button" data-window-title="what I also like to do">
+          <img src="assets/xp-folder.png" alt="" />
+          <span>what I also like to do</span>
+        </button>
+      </nav>
+      <dialog class="xp-window" aria-labelledby="window-title">
+        <div class="xp-window__titlebar">
+          <div class="xp-window__title">
+            <span class="xp-window__icon" aria-hidden="true"></span>
+            <span id="window-title"></span>
+          </div>
+          <button class="xp-window__close" type="button" aria-label="Close window">×</button>
+        </div>
+        <div class="xp-window__content">
+          <img src="assets/xp-folder.png" alt="" />
+          <p id="window-message"></p>
+        </div>
+      </dialog>
+      <footer class="taskbar">
+        <button class="start-button" type="button" aria-label="Start menu" aria-expanded="false" aria-controls="start-menu">
+          <img src="assets/amira-start.png" alt="" />
+          <span>start</span>
+        </button>
+      </footer>
+      <aside class="start-menu" id="start-menu" aria-label="Start menu" hidden></aside>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
