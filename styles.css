@@ -56,7 +56,7 @@ body { background: #3d80de; }
 }
 
 .xp-window {
-  width: min(32rem, calc(100vw - 2rem));
+  width: min(44rem, calc(100vw - 2rem));
   padding: 3px;
   border: 1px solid #0831d9;
   border-radius: 8px 8px 0 0;
@@ -110,20 +110,70 @@ body { background: #3d80de; }
 .xp-window__close:hover { filter: brightness(1.12); }
 
 .xp-window__content {
-  display: flex;
-  min-height: 10rem;
-  align-items: center;
-  gap: 1.1rem;
-  padding: 2rem;
+  min-height: 17rem;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
   border: 1px solid #fff;
   border-top: 0;
   background: #fff;
   font-size: 0.9rem;
 }
 
-.xp-window__content img { width: 3rem; height: 3rem; object-fit: contain; }
+.window-empty { margin: 0; }
 
-.xp-window__content p { margin: 0; }
+.slide {
+  display: grid;
+  min-height: 12rem;
+  grid-template-columns: minmax(7rem, 0.7fr) minmax(0, 1.6fr);
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 3rem);
+}
+
+.slide__logo {
+  width: min(100%, 10rem);
+  max-height: 12rem;
+  justify-self: center;
+  object-fit: contain;
+}
+
+.slide__description {
+  margin: 0;
+  font-family: "Trebuchet MS", Tahoma, sans-serif;
+  font-size: clamp(0.9rem, 1.75vw, 1.05rem);
+  line-height: 1.65;
+}
+
+.slide__description strong { color: #144eae; }
+
+.xp-window__navigation {
+  display: flex;
+  min-height: 2.8rem;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid #fff;
+  border-top: 1px solid #b7b4a8;
+  background: #ece9d8;
+  font-size: 0.75rem;
+}
+
+.xp-arrow {
+  width: 1.9rem;
+  height: 1.75rem;
+  border: 1px solid #7f9db9;
+  border-radius: 3px;
+  background: linear-gradient(#fff, #e3e1d6);
+  color: #1c4c99;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.xp-arrow:not(:disabled):hover { background: #fff; }
+
+.xp-arrow:disabled { color: #aaa; cursor: default; }
+
+.xp-arrow:focus-visible { outline: 1px dotted #000; outline-offset: -4px; }
 
 .taskbar {
   position: absolute;
@@ -197,4 +247,11 @@ body { background: #3d80de; }
   }
 
   .folder { width: 4.25rem; }
+
+  .slide {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .slide__logo { max-height: 7rem; }
 }

@@ -36,8 +36,16 @@
           <button class="xp-window__close" type="button" aria-label="Close window">×</button>
         </div>
         <div class="xp-window__content">
-          <img src="assets/xp-folder.png" alt="" />
-          <p id="window-message"></p>
+          <div class="slide" id="slide" hidden>
+            <img class="slide__logo" id="slide-logo" alt="" />
+            <p class="slide__description"><strong id="slide-heading"></strong><span id="slide-copy"></span></p>
+          </div>
+          <p class="window-empty" id="window-message"></p>
+        </div>
+        <div class="xp-window__navigation" id="slide-navigation" hidden>
+          <button class="xp-arrow" id="previous-slide" type="button" aria-label="Previous slide">‹</button>
+          <span id="slide-count" aria-live="polite"></span>
+          <button class="xp-arrow" id="next-slide" type="button" aria-label="Next slide">›</button>
         </div>
       </dialog>
       <footer class="taskbar">
